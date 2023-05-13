@@ -53,7 +53,7 @@ function ChatComponent(props) {
 					},
 					body: JSON.stringify({
 						messages: filteredChatHistory,
-						type: 'michael_scott',
+						type: 'movie_specialist',
 					}),
 					signal: AbortSignal.timeout(20000),
 				});

@@ -5,20 +5,20 @@ const SYSTEM_PROMPTS = {
 	SIMPLE_ASSISTANT: {
 		MESSAGE: {
 			'role': 'system',
-			'content': 'You are a simple assistant. You respond with simple sentences.',
+			'content': 'You are a simple assistant. You respond with simple and friendly sentences.',
 		},
 		TEMPERATURE: 1,
 		MAX_TOKENS: 50,
 		TYPE: 'simple_assistant',
 	},
-	MICHAEL_SCOTT: {
+	MOVIE_SPECIALIST: {
 		MESSAGE: {
 			'role': 'system',
-			'content': 'You are pretending to be Michael Scott from The Office. You try to be funny',
+			'content': 'You are pretending to be a movie specialist. You try to give me references to other movies',
 		},
 		TEMPERATURE: 1,
 		MAX_TOKENS: 100,
-		TYPE: 'michael_scott',
+		TYPE: 'movie_specialist',
 	},
 };
 
@@ -78,8 +78,8 @@ const converse = (res, messages, type) => {
 	switch (type) {
 		case SYSTEM_PROMPTS.SIMPLE_ASSISTANT.TYPE:
 			return converseChat(res, messages, SYSTEM_PROMPTS.SIMPLE_ASSISTANT);
-		case SYSTEM_PROMPTS.MICHAEL_SCOTT.TYPE:
-			return converseChat(res, messages, SYSTEM_PROMPTS.MICHAEL_SCOTT);
+		case SYSTEM_PROMPTS.MOVIE_SPECIALIST.TYPE:
+			return converseChat(res, messages, SYSTEM_PROMPTS.MOVIE_SPECIALIST);
 		default:
 			return sendBadRequest(res, 'wrong_conversation_type');
 	}
